@@ -1,0 +1,43 @@
+#include<bits/stdc++.h>
+using namespace std;
+typedef long long ll;
+typedef long double ld;
+#define fast_io ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL);
+
+int main()
+{
+    fast_io;
+    #ifndef ONLINE_JUDGE
+        freopen("input.txt", "r", stdin);
+        freopen("output.txt", "w", stdout);
+    #endif
+    
+    int t;
+    cin >> t;
+
+    while (t--)
+    {
+        int n, c = 0;
+        cin >> n;
+
+        vector<int> a(n, 0);
+        for (int i = 0; i < n; i++)
+            cin >> a[i];
+
+        sort(a.begin(), a.end());
+
+        for (int i = 0; i < n - 1; i++)
+        {
+            int x = abs(a[i] - a[i + 1]);
+            if (x == 1 || x == 0)
+                c++;
+        }
+
+        if (c == (n - 1))
+            cout << "YES" << endl;
+        else 
+            cout << "NO" << endl;
+    }
+
+    return 0;
+}
