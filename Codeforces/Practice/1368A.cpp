@@ -20,11 +20,7 @@ int main()
         ll a, b, n;
         cin >> a >> b >> n;
 
-        if (a > b)
-            swap(a, b);
-
         int c = 0;
-
         while (a <= n || b <= n)
         {
             if (a > n || b > n) break;
